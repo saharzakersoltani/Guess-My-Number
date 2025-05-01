@@ -1,0 +1,17 @@
+/* under 690px */
+@media (max-width: 44em) {
+  html {
+    font-size: 60%;
+  }
+
+  main {
+    flex-direction: column;
+    margin-top: 10rem;
+    height: 50vh;
+    text-align: center;
+  }
+
+  h1 {
+    line-height: 1.75;
+  }
+}
