@@ -20,8 +20,8 @@
 start making the "Guess My Number!" game.
 */
 let randomNumber = Math.trunc(Math.random() * 20) + 1;
-
 let score = 20;
+let highScore = 0;
 
 document.querySelector('.check').addEventListener('click', function () {
   const guessNumber = Number(document.querySelector('.guess').value);
@@ -35,6 +35,11 @@ document.querySelector('.check').addEventListener('click', function () {
     document.querySelector('body').style.backgroundColor = '#60b347';
     document.querySelector('.number').style.width = '30rem';
     document.querySelector('.number').textContent = randomNumber;
+
+    if (score > highScore) {
+      highScore = score;
+      document.querySelector('.highscore').textContent = highScore;
+    }
   }
   // when guess number is too high
   else if (guessNumber > randomNumber) {
@@ -63,7 +68,9 @@ document.querySelector('.check').addEventListener('click', function () {
 // Implement a game reset functionality, so that the player can make a new guess!
 document.querySelector('.again').addEventListener('click', function () {
   randomNumber = Math.trunc(Math.random() * 20) + 1;
-  document.querySelector('.score').textContent = '20';
+  score = 20;
+
+  document.querySelector('.score').textContent = score;
   document.querySelector('.message').textContent = 'Start guessing...';
   document.querySelector('.number').textContent = '?';
   document.querySelector('body').style.backgroundColor = '#222';
