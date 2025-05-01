@@ -26,14 +26,18 @@ let score = 20;
 
 document.querySelector('.check').addEventListener('click', function () {
   const guessNumber = Number(document.querySelector('.guess').value);
-  // console.log(guessNumber);
+  // empty guess number
   if (!guessNumber) {
     document.querySelector('.message').textContent = '⛔ No Number!';
-  } else if (guessNumber === randomNumber) {
+  }
+  // guess number is equal to random number
+  else if (guessNumber === randomNumber) {
     document.querySelector('.message').textContent = '🎉 Correct Number!';
-    //
-    document.querySelector(body);
-  } else if (guessNumber > randomNumber) {
+    document.querySelector('body').style.backgroundColor = '#60b347';
+    document.querySelector('.number').style.width = '30rem';
+  }
+  // guess number is too high
+  else if (guessNumber > randomNumber) {
     document.querySelector('.message').textContent = '📈 Too High';
     if (score > 1) {
       score--;
@@ -42,7 +46,9 @@ document.querySelector('.check').addEventListener('click', function () {
       document.querySelector('.message').textContent = '💥 You lost the game!';
       document.querySelector('.score').textContent = '0';
     }
-  } else if (guessNumber < randomNumber) {
+  }
+  // guess number is too low
+  else if (guessNumber < randomNumber) {
     document.querySelector('.message').textContent = '📉 Too Low';
     if (score > 1) {
       score--;
