@@ -1,11 +1,15 @@
-/* under 690px */
-@media (max-width: 44em) {
+/* under 1080px */
+@media (max-width: 67.5em) {
   html {
-    font-size: 60%;
+    font-size: 45%;
   }
+}
 
+/* under 690px */
+@media (max-width: 44.5em) {
   main {
     flex-direction: column;
+    gap: 6rem;
     margin-top: 10rem;
     height: 50vh;
     text-align: center;
@@ -13,5 +17,20 @@
 
   h1 {
     line-height: 1.75;
+  }
+
+  .label-highscore {
+    margin-bottom: 5rem;
+  }
+
+  .again {
+    margin-bottom: 6rem;
+  }
+}
+
+/* under 480px */
+@media (max-width: 30em) {
+  html {
+    font-size: 35%;
   }
 }
